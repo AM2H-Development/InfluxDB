@@ -1,3 +1,3 @@
 # InfluxDB
 
-to connect with Grafana use http://influxdb:8086/ as Server-URL
+to connect with Grafana use http://influxdb:8086/ or https://influx.qxf.de as Server-URL
