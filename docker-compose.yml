@@ -20,7 +20,8 @@ services:
       - influxdb_conf:/etc/influxdb2
     networks:
       net:
-      #db:
+        aliases:
+          - influxdb
     ports:
       - "8086:8086"
     environment:
@@ -31,7 +32,6 @@ volumes:
   influxdb_conf:
   
 networks:
-  #db:
   net:
     external:
       name: traefik_net
