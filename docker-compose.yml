@@ -6,7 +6,7 @@ services:
     image: "influxdb:2.1-alpine"
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.influxdb.rule=Host(`influx.qxf.de`)"
+      - "traefik.http.routers.influxdb.rule=Host(`influx.${HOST}`)"
       - "traefik.http.routers.influxdb.entrypoints=websecure"
       - "traefik.http.routers.influxdb.tls.certresolver=myresolver"
       - "traefik.http.services.influxdb.loadbalancer.server.port=8086"
