@@ -10,6 +10,11 @@ services:
       - "traefik.http.routers.influxdb.entrypoints=websecure"
       - "traefik.http.routers.influxdb.tls.certresolver=myresolver"
       - "traefik.http.services.influxdb.loadbalancer.server.port=8086"
+      - "traefik.http.middlewares.influxdbsts.headers.stsincludesubdomains=false"
+      - "traefik.http.middlewares.influxdbsts.headers.stspreload=true"
+      - "traefik.http.middlewares.influxdbsts.headers.stsseconds=31536000"
+      - "traefik.http.middlewares.influxdbsts.headers.isdevelopment=false"
+      - "traefik.http.routers.influxdb.middlewares=influxdbsts"
     logging:
       driver: "json-file"
       options:
