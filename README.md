@@ -1,11 +1,14 @@
 # InfluxDB
 
-git clone https://github.com/AM2H-Development/InfluxDB.git
+## install:
+* git clone https://github.com/AM2H-Development/InfluxDB.git
+* cd InfluxDB
+* cp sample.env .env
+* nano .env # adopt Hostname
+* docker compose up -d
 
-touch .env (fill with your personal data, see .env in git)
+## data:
+all data is stored in volume "grafana_data"
 
-cd InfluxDB
-
-docker-compose --env-file ../.env up -d
-
-to connect with Grafana use https://influx.HOST as Server-URL
+## use:
+* first time default login is: admin/admin
