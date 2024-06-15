@@ -1,4 +1,4 @@
-name: influxdb
+name: ${PROJECT}
 
 services:
   influxdb:
