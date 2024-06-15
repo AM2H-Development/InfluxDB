@@ -8,7 +8,7 @@
 * docker compose up -d
 
 ## data:
-all data is stored in volume "influx_data" and "influx_conf"
+all data is stored in volume "influxdb_data" and "influxdb_conf"
 
 ## use:
-* first time default login is: admin/admin
+* localhost:8086 or Hostname:443 (behind Traefiks)
