@@ -1,4 +1,4 @@
-version: "3.9"
+name: influxdb
 
 services:
   influxdb:
@@ -6,7 +6,7 @@ services:
     image: "influxdb:2.7-alpine"
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.influxdb.rule=Host(`influx.${HOST}`)"
+      - "traefik.http.routers.influxdb.rule=Host(`${HOST}`)"
       - "traefik.http.routers.influxdb.entrypoints=websecure"
       - "traefik.http.routers.influxdb.tls.certresolver=myresolver"
       - "traefik.http.services.influxdb.loadbalancer.server.port=8086"
@@ -37,5 +37,5 @@ volumes:
   
 networks:
   net:
-    external:
-      name: traefik_net
+    name: traefik_net
+    external: true
